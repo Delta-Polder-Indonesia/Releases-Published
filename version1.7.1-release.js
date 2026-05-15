@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name         Bintang Toba Pro
-// @namespace    https://github.com/bintang-toba-pro
+// @name         GeoGuessr - Let's explore the world!
+// @namespace    https://github.com/JD-YH03D/release
 // @version      1.7.1
 // @description  Universal geography game assistant with Mini Map - GeoGuessr, WorldGuessr, OpenGuessr, FreeGuessr
 // @author       Bintang Toba Pro
@@ -19,10 +19,29 @@
 // @connect      discord.com
 // @run-at       document-idle
 // @icon         https://www.geoguessr.com/favicon.ico
+// @downloadURL https://update.greasyfork.org/scripts/578278/GeoGuessr%20-%20Let%27s%20explore%20the%20world%21.user.js
+// @updateURL https://update.greasyfork.org/scripts/578278/GeoGuessr%20-%20Let%27s%20explore%20the%20world%21.meta.js
 // ==/UserScript==
 
-/* global google, L, */
+/* global google, L,jshint esversion: 11, */
 /* eslint-disable no-unused-vars */
+/*
+┌───────────────────────────────────────────────────────────┐
+| Key   | Function       | Description                      |
+| ----- | -------------- | -------------------------------- |
+| `Tab` | Settings Panel | Open/close settings interface    |
+| `V`   | Info Panel     | Toggle location info display     |
+| `M`   | Manual Marker  | Place marker on game map         |
+| `X`   | Refresh        | Reset for next round             |
+| `1`   | Auto Place     | Place marker (exact position)    |
+| `2`   | Safe Place     | Place marker (with offset)       |
+| `S`   | Zoom In        | Increase mini-map zoom level     |
+| `A`   | Zoom Out       | Decrease mini-map zoom level     |
+| `C`   | Copy Coords    | Copy coordinates to clipboard    |
+| `G`   | Google Maps    | Open location in Google Maps     |
+| `D`   | Discord        | Send location to Discord webhook |
+└───────────────────────────────────────────────────────────┘
+*/
 
 (function() {
     'use strict';
