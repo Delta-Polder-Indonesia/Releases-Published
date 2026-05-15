@@ -14,18 +14,32 @@ This repository contains high-quality UserScripts (Tampermonkey/Greasemonkey) th
 
 ## 📦 Scripts List
 
-### GeoGuessr - Let's explore the world!
+<h1> GeoGuessr - Let's explore the world!</h1>
+
+<div align="center">
+
+<img src="https://www.seriouslyfreshmedia.com/wp-content/uploads/2016/06/cherrymedia-cherrysauce-geoguessr-1.jpg" 
+     alt="Bintang Toba Pro Hero Image">
 
 | Script Name | Description | Installation |
 | ----------- | ----------- | ------------ |
 | GeoGuessr | version 1.7.1 - release.js | [Install](https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/GeoGuessr%20-%20Let's%20explore%20the%20world!/version1.7.1-release.js) |
 | GeoGuessr | version 1.8.0 - release.js | [Install](https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/GeoGuessr%20-%20Let's%20explore%20the%20world!/version1.8.0-release.js) |
+</div>
 
-### Chess.com - Play Chess Online - Free Games
+<h1> Chess.com - Play Chess Online - Free Games </h1>
+
+<div align="center">
+
+<img src="https://static.wikia.nocookie.net/logopedia/images/3/32/Chess.com_2012.png/revision/latest?cb=20221006102754" 
+     alt="Bintang Toba Pro Hero Image"
+     width="70%">
 
 | Script Name | Description | Installation |
 | ----------- | ----------- | ------------ |
 | Chess.com | version 1.0.0 - release.js | [Install](https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/Chess.com%20-%20Play%20Chess%20Online%20-%20Free%20Games/version1.0.0-release.js) |
+
+</div>
 
 ## 🛠 Installation
 
