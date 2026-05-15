@@ -13,30 +13,30 @@
 
 ---
 
-## 📖 Deskripsi
+## 📖 Description
 
-**Bintang Toba Pro** adalah userscript premium untuk Chess.com yang menyediakan berbagai fitur otomatisasi dan analisis catur menggunakan Stockfish engine. Script ini dirancang untuk membantu pemain memahami posisi, melatih kemampuan, dan mengotomatisasi tindakan repetitif.
+**Bintang Toba Pro** is a premium userscript for Chess.com that provides various chess automation and analysis features using the Stockfish engine. This script is designed to help players understand positions, train their skills, and automate repetitive actions.
 
 ---
 
-## ⚡ Fitur Utama
+## ⚡ Main Features
 
 ### 🧠 Engine Analysis
-- **Stockfish 10** integration dengan multi-PV support
+- **Stockfish 10** integration with multi-PV support
 - Real-time evaluation (CP & Mate)
 - Principal Variation (PV) arrows visualization
-- Best move arrows dengan color grading
+- Best move arrows with color grading
 - Position analysis mode
 
 ### 🎯 Auto Move Execution
-- Auto-run dengan customizable delay
+- Auto-run with customizable delay
 - Humanized move timing (anti-detection)
 - Clock sync mode (adaptive delay based on remaining time)
 - Opening book support (external JSON)
 - Consensus move selection
 
 ### 🔄 Premove System
-- Smart premove dengan safety check
+- Smart premove with safety check
 - CCT analysis (Checks, Captures, Threats)
 - Risk assessment & confidence scoring
 - Multi-PV convergence check
@@ -70,56 +70,56 @@
 
 ---
 
-## 📦 Instalasi
+## 📦 Installation
 
 ### Prerequisites
-1. **Browser:** Chrome, Firefox, Edge, atau browser berbasis Chromium/Gecko
-2. **Extension Manager:** Tampermonkey atau Violentmonkey
+1. **Browser:** Chrome, Firefox, Edge, or Chromium/Gecko-based browsers
+2. **Extension Manager:** Tampermonkey or Violentmonkey
 
-### Langkah Instalasi
+### Installation Steps
 
-#### Option 1: Dari GreasyFork (Recommended)
+#### Option 1: From GreasyFork (Recommended)
 ```
-1. Kunjungi halaman GreasyFork script
-2. Klik tombol "Install script"
-3. Konfirmasi instalasi di Tampermonkey
-4. Script akan aktif otomatis di chess.com
+1. Visit the GreasyFork script page
+2. Click the "Install script" button
+3. Confirm installation in Tampermonkey
+4. The script will activate automatically on chess.com
 ```
 
 #### Option 2: Manual Installation
 ```
-1. Download file engine.js
-2. Buka Tampermonkey dashboard
-3. Klik "Create a new script"
-4. Copy-paste seluruh konten engine.js
+1. Download the engine.js file
+2. Open Tampermonkey dashboard
+3. Click "Create a new script"
+4. Copy-paste the entire contents of engine.js
 5. Save (Ctrl+S)
-6. Enable script
+6. Enable the script
 ```
 
-#### Option 3: Dari GitHub
+#### Option 3: From GitHub
 ```bash
 # Clone repository
-git clone https://github.com/Delta-Polder-Indonesia/Egine-chess-tempermonkey-pro.git
+git clone https://github.com/JD-YH03D/release.git
 
-# Atau download langsung
-wget https://raw.githubusercontent.com/Delta-Polder-Indonesia/Egine-chess-tempermonkey-pro/refs/heads/main/engine.js
+# Or download directly
+wget https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/Chess.com%20-%20Play%20Chess%20Online%20-%20Free%20Games/version1.0.0-release.js
 ```
 
 ---
 
-## ⚙️ Konfigurasi
+## ⚙️ Configuration
 
 ### Panel Settings
 
-| Setting | Default | Range | Deskripsi |
-|---------|---------|-------|-----------|
-| **Min Delay** | 0.5s | 0.05-60s | Delay minimum untuk auto move |
-| **Max Delay** | 3.0s | 0.05-60s | Delay maksimum untuk auto move |
+| Setting | Default | Range | Description |
+|---------|---------|-------|-------------|
+| **Min Delay** | 0.5s | 0.05-60s | Minimum delay for auto move |
+| **Max Delay** | 3.0s | 0.05-60s | Maximum delay for auto move |
 | **Custom Depth** | 15 | 1-30 | Engine analysis depth |
 | **Skill Level** | 20 | 0-20 | Stockfish skill level |
 | **ELO Rating** | 1600 | 300-3200 | Human mode ELO |
-| **Auto Resign (Mate)** | M3 | M1-M10 | Batas resign untuk mate |
-| **Auto Resign (CP)** | -1000 | -100 to -5000 | Batas resign untuk centipawn |
+| **Auto Resign (Mate)** | M3 | M1-M10 | Resignation threshold for mate |
+| **Auto Resign (CP)** | -1000 | -100 to -5000 | Resignation threshold for centipawn |
 | **Clock Sync** | OFF | ON/OFF | Adaptive delay based on clock |
 | **Premove** | OFF | ON/OFF | Enable smart premove system |
 
@@ -136,118 +136,118 @@ wget https://raw.githubusercontent.com/Delta-Polder-Indonesia/Egine-chess-temper
 
 ---
 
-## 🎮 Cara Penggunaan
+## 🎮 How to Use
 
-### Mode Normal (Auto Run)
+### Normal Mode (Auto Run)
 ```
-1. Enable "Auto Run" di panel
-2. Set delay sesuai preferensi (rekomendasi: 1-3s)
-3. Script akan otomatis menganalisis posisi
-4. Move akan dieksekusi setelah delay
-```
-
-### Mode Analysis
-```
-1. Enable "Analysis Mode" di panel
-2. Pilih warna auto-play (White/Black/Off)
-3. Script akan menganalisis terus menerus
-4. Auto-play move saat stability threshold tercapai
+1. Enable "Auto Run" in the panel
+2. Set delay according to preference (recommended: 1-3s)
+3. The script will automatically analyze the position
+4. Move will be executed after the delay
 ```
 
-### Mode Premove
+### Analysis Mode
 ```
-1. Enable "Premove System" di panel
-2. Pilih mode: Every/Capture/Filtered
-3. Set confidence threshold (rekomendasi: 60-80%)
-4. Script akan premove saat confidence tinggi
+1. Enable "Analysis Mode" in the panel
+2. Select auto-play color (White/Black/Off)
+3. The script will analyze continuously
+4. Auto-play move when stability threshold is reached
+```
+
+### Premove Mode
+```
+1. Enable "Premove System" in the panel
+2. Select mode: Every/Capture/Filtered
+3. Set confidence threshold (recommended: 60-80%)
+4. The script will premove when confidence is high
 ```
 
 ### Auto Resign Setup
 ```
-1. Enable "Auto Resign" di panel
-2. Pilih mode: Mate in atau Centipawn
+1. Enable "Auto Resign" in the panel
+2. Select mode: Mate in or Centipawn
 3. Set threshold:
-   - Mate: M3 (resign di M3, M2, M1)
-   - CP: -1000 (resign di -1000cp atau lebih buruk)
-4. Script akan resign otomatis saat threshold tercapai
+   - Mate: M3 (resign at M3, M2, M1)
+   - CP: -1000 (resign at -1000cp or worse)
+4. The script will resign automatically when threshold is reached
 ```
 
 ---
 
 ## 🔧 Troubleshooting
 
-### Script Tidak Jalan
+### Script Not Working
 ```
-✅ Pastikan Tampermonkey/Violentmonkey terinstall
-✅ Pastikan script enabled di dashboard
-✅ Pastikan URL match: https://www.chess.com/*
-✅ Refresh halaman chess.com (Ctrl+F5)
-✅ Cek browser console untuk error (F12)
+✅ Make sure Tampermonkey/Violentmonkey is installed
+✅ Make sure the script is enabled in the dashboard
+✅ Make sure URL match: https://www.chess.com/*
+✅ Refresh the chess.com page (Ctrl+F5)
+✅ Check browser console for errors (F12)
 ```
 
-### Engine Tidak Analisis
+### Engine Not Analyzing
 ```
-✅ Cek "Engine Status LED" di panel (harus hijau)
-✅ Klik tombol "Reload" di tab More
-✅ Pastikan tidak ada script conflict
+✅ Check "Engine Status LED" in the panel (must be green)
+✅ Click the "Reload" button in the More tab
+✅ Make sure there are no script conflicts
 ✅ Clear browser cache
 ```
 
-### Auto Move Tidak Eksekusi
+### Auto Move Not Executing
 ```
-✅ Pastikan "Auto Move Piece" enabled
-✅ Cek apakah giliran Anda (LED biru)
-✅ Pastikan delay tidak terlalu panjang
-✅ Cek console untuk error message
+✅ Make sure "Auto Move Piece" is enabled
+✅ Check if it's your turn (blue LED)
+✅ Make sure delay is not too long
+✅ Check console for error messages
 ```
 
-### Premove Tidak Jalan
+### Premove Not Working
 ```
 ✅ Enable "Premove System"
-✅ Pastikan bukan giliran Anda
-✅ Cek confidence threshold (turunkan jika perlu)
-✅ Lihat premove stats di panel
+✅ Make sure it's not your turn
+✅ Check confidence threshold (lower if needed)
+✅ See premove stats in the panel
 ```
 
-### Auto Resign Tidak Trigger
+### Auto Resign Not Triggering
 ```
-✅ Pastikan "Auto Resign" enabled
-✅ Cek threshold setting (M4 vs M3)
-✅ Untuk CP: butuh 3x trigger berturut-turut
-✅ Untuk Mate: instant trigger saat threshold tercapai
+✅ Make sure "Auto Resign" is enabled
+✅ Check threshold setting (M4 vs M3)
+✅ For CP: requires 3 consecutive triggers
+✅ For Mate: instant trigger when threshold is reached
 ```
 
 ---
 
-## 🤝 Kontribusi
+## 🤝 Contribution
 
-### Cara Berkontribusi
+### How to Contribute
 ```
-1. Fork repository
-2. Buat feature branch (git checkout -b feature/AmazingFeature)
-3. Commit perubahan (git commit -m 'Add AmazingFeature')
-4. Push ke branch (git push origin feature/AmazingFeature)
+1. Fork the repository
+2. Create a feature branch (git checkout -b feature/AmazingFeature)
+3. Commit changes (git commit -m 'Add AmazingFeature')
+4. Push to branch (git push origin feature/AmazingFeature)
 5. Open Pull Request
 ```
 
 ### Bug Report
-Jika menemukan bug, silakan buat issue dengan format:
+If you find a bug, please create an issue with the following format:
 ```
 **Describe the bug**
-Deskripsi jelas tentang bug
+Clear description of the bug
 
 **To Reproduce**
-Langkah untuk reproduce:
+Steps to reproduce:
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
 
 **Expected behavior**
-Apa yang seharusnya terjadi
+What should have happened
 
 **Screenshots**
-Jika ada, tambahkan screenshot
+If any, add screenshots
 
 **Environment:**
 - Browser: [Chrome/Firefox/Edge]
@@ -258,16 +258,16 @@ Jika ada, tambahkan screenshot
 ### Feature Request
 ```
 **Is your feature request related to a problem?**
-Deskripsi masalah
+Problem description
 
 **Describe the solution you'd like**
-Solusi yang diinginkan
+Desired solution
 
 **Describe alternatives you've considered**
-Alternatif yang sudah dipertimbangkan
+Alternatives you've considered
 
 **Additional context**
-Konteks tambahan
+Additional context
 ```
 
 ---
@@ -278,9 +278,9 @@ Distributed under the **GPL-3.0-only License**.
 See [LICENSE](LICENSE) for more information.
 
 ### Commercial Use
-❌ **Dilarang** untuk penggunaan komersial tanpa izin  
-✅ **Boleh** untuk penggunaan pribadi  
-✅ **Boleh** untuk modifikasi dan distribusi (dengan atribusi)
+❌ **Prohibited** for commercial use without permission  
+✅ **Allowed** for personal use  
+✅ **Allowed** for modification and distribution (with attribution)
 
 ---
 
@@ -289,7 +289,7 @@ See [LICENSE](LICENSE) for more information.
 - **Stockfish Team** - Chess engine
 - **Chess.com** - Platform (unofficial script)
 - **Tampermonkey** - Userscript manager
-- **Contributors** - Semua yang berkontribusi
+- **Contributors** - Everyone who has contributed
 
 ---
 
@@ -304,13 +304,13 @@ See [LICENSE](LICENSE) for more information.
 
 ## ⚠️ Disclaimer
 
-> **PENTING:** Script ini adalah tools untuk **belajar dan latihan catur**.  
-> Penggunaan untuk cheating dalam turnamen atau rated games **dilarang keras** dan dapat mengakibatkan:
-> - Account ban dari Chess.com
-> - Diskualifikasi dari turnamen
+> **IMPORTANT:** This script is a tool for **learning and chess practice**.  
+> Use for cheating in tournaments or rated games is **strictly prohibited** and may result in:
+> - Account ban from Chess.com
+> - Tournament disqualification
 > - Rating reset
 
-**Gunakan dengan bijak dan bertanggung jawab!**
+**Use wisely and responsibly!**
 
 ---
 
@@ -324,7 +324,7 @@ See [LICENSE](LICENSE) for more information.
 - ✅ Auto-match enable auto-run after new game
 - ✅ Removed dead code & orphan variables
 - ✅ Fixed AutoMatch button priority
-- ✅ Fixed AutoMatch anti-"Tanding Ulang" filter
+- ✅ Fixed AutoMatch anti-"Rematch" filter
 
 ### v1.0.0 (Initial)
 - Initial release
