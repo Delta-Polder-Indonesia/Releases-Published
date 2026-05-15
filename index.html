@@ -47,14 +47,122 @@
             box-shadow: 0 4px 15px -3px rgba(37, 99, 235, 0.4);
         }
 
-        /* Subtle grid background */
         .bg-grid {
             background-image: radial-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
+        /* Modal specific styles */
+        #modal-overlay.active {
+            display: flex;
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .kbd-capsule {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            color: #60a5fa;
+            box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body class="bg-grid">
+
+    <!-- Modal for GeoGuessr Guide -->
+    <div id="modal-overlay" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] hidden items-center justify-center p-6">
+        <div class="glass-card max-w-2xl w-full rounded-2xl overflow-hidden shadow-2xl">
+            <div class="bg-slate-900/80 px-6 py-4 border-b border-slate-800 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-keyboard text-emerald-400"></i>
+                    <h3 class="font-bold text-white uppercase tracking-wider text-sm">Control Schema: GeoGuessr Explore</h3>
+                </div>
+                <button onclick="closeModal()" class="text-slate-500 hover:text-white transition">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6">
+                <div class="overflow-hidden border border-slate-800 rounded-lg">
+                    <table class="w-full text-left text-xs mono">
+                        <thead class="bg-slate-900/50 text-slate-500">
+                            <tr>
+                                <th class="px-4 py-3 font-semibold uppercase tracking-widest border-b border-slate-800">Key</th>
+                                <th class="px-4 py-3 font-semibold uppercase tracking-widest border-b border-slate-800">Function</th>
+                                <th class="px-4 py-3 font-semibold uppercase tracking-widest border-b border-slate-800">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/50 text-slate-300">
+                            <tr>
+                                <td class="px-4 py-3"><span class="kbd-capsule">Tab</span></td>
+                                <td class="px-4 py-3 text-white">Settings Panel</td>
+                                <td class="px-4 py-3 italic text-slate-500">Open/close settings interface</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"><span class="kbd-capsule">V</span></td>
+                                <td class="px-4 py-3 text-white">Info Panel</td>
+                                <td class="px-4 py-3 italic text-slate-500">Toggle location info display</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"><span class="kbd-capsule">M</span></td>
+                                <td class="px-4 py-3 text-white">Manual Marker</td>
+                                <td class="px-4 py-3 italic text-slate-500">Place marker on game map</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"><span class="kbd-capsule">X</span></td>
+                                <td class="px-4 py-3 text-white">Refresh</td>
+                                <td class="px-4 py-3 italic text-slate-500">Reset for next round</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"><span class="kbd-capsule">1</span></td>
+                                <td class="px-4 py-3 text-white font-bold">Auto Place</td>
+                                <td class="px-4 py-3 italic text-slate-500 text-emerald-500/80">Place marker (exact position)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"><span class="kbd-capsule">2</span></td>
+                                <td class="px-4 py-3 text-white">Safe Place</td>
+                                <td class="px-4 py-3 italic text-slate-500">Place marker (with offset)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"><span class="kbd-capsule">S</span></td>
+                                <td class="px-4 py-3 text-white">Zoom In</td>
+                                <td class="px-4 py-3 italic text-slate-500">Increase mini-map zoom level</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"><span class="kbd-capsule">A</span></td>
+                                <td class="px-4 py-3 text-white">Zoom Out</td>
+                                <td class="px-4 py-3 italic text-slate-500">Decrease mini-map zoom level</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"><span class="kbd-capsule">C</span></td>
+                                <td class="px-4 py-3 text-white">Copy Coords</td>
+                                <td class="px-4 py-3 italic text-slate-500">Copy coordinates to clipboard</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"><span class="kbd-capsule">G</span></td>
+                                <td class="px-4 py-3 text-white">Google Maps</td>
+                                <td class="px-4 py-3 italic text-slate-500">Open location in Google Maps</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3"><span class="kbd-capsule">D</span></td>
+                                <td class="px-4 py-3 text-white">Discord</td>
+                                <td class="px-4 py-3 italic text-slate-500">Send location to Discord webhook</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button onclick="closeModal()" class="px-6 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-md text-xs font-bold transition">CLOSE GUIDE</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <header class="border-b border-slate-800/50 bg-slate-950/80 sticky top-0 z-50 backdrop-blur-xl">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -97,7 +205,7 @@
                     <a href="#directory" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold transition hover:opacity-90 flex items-center text-sm">
                         Explore Scripts <i class="fas fa-chevron-right ml-3 text-xs"></i>
                     </a>
-                    <a href="#contribute" class="bg-slate-900 hover:bg-slate-800 text-slate-300 px-8 py-4 rounded-lg font-semibold transition border border-slate-800 text-sm">
+                    <a href="#documentation" class="bg-slate-900 hover:bg-slate-800 text-slate-300 px-8 py-4 rounded-lg font-semibold transition border border-slate-800 text-sm">
                         Technical Guidelines
                     </a>
                 </div>
@@ -146,12 +254,23 @@
                 <div class="glass-card rounded-2xl overflow-hidden border border-slate-800/50">
                     <div class="bg-slate-900/40 px-6 py-4 border-b border-slate-800/50 flex items-center justify-between">
                         <div class="flex items-center space-x-3">
-                            <div class="text-blue-500 bg-blue-500/10 p-2 rounded-lg">
-                                <i class="fas fa-globe-americas"></i>
+                            <div class="bg-emerald-500/10 p-2 rounded-lg border border-emerald-500/20">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="#10b981" stroke-width="1.5" fill="none"/>
+                                    <path d="M2 12h20" stroke="#10b981" stroke-width="1.2"/>
+                                    <path d="M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10" stroke="#10b981" stroke-width="1.2" fill="none"/>
+                                    <path d="M12 2c-2.5 3-4 6.5-4 10s1.5 7 4 10" stroke="#10b981" stroke-width="1.2" fill="none"/>
+                                    <ellipse cx="12" cy="12" rx="5" ry="10" stroke="#10b981" stroke-width="1.2" fill="none"/>
+                                </svg>
                             </div>
-                            <h4 class="font-bold text-white tracking-tight">GeoGuessr — Global Exploration Suite</h4>
+                            <h4 class="font-bold text-white tracking-tight">GeoGuessr - Let's explore the world!</h4>
                         </div>
-                        <span class="text-[10px] mono text-slate-500 uppercase tracking-widest">2 Assets</span>
+                        <div class="flex items-center space-x-4">
+                            <button onclick="openModal()" class="text-[10px] mono text-emerald-400 hover:text-emerald-300 transition flex items-center group">
+                                <i class="fas fa-book-open mr-2 text-[8px]"></i> [ VIEW GUIDE ]
+                            </button>
+                            <span class="text-[10px] mono text-slate-500 uppercase tracking-widest border-l border-slate-800 pl-4">2 Assets</span>
+                        </div>
                     </div>
                     <div class="overflow-x-auto">
                         <table class="w-full text-left text-sm">
@@ -163,18 +282,18 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-800/30">
-                                <tr class="hover:bg-blue-500/[0.02] transition">
-                                    <td class="px-6 py-4 mono text-blue-400">v1.7.1-release.js</td>
+                                <tr class="hover:bg-emerald-500/[0.02] transition">
+                                    <td class="px-6 py-4 mono text-emerald-400">v1.7.1-release.js</td>
                                     <td class="px-6 py-4 text-slate-400">Core exploration logic and coordinate stabilization.</td>
                                     <td class="px-6 py-4 text-right">
-                                        <a href="https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/GeoGuessr%20-%20Let's%20explore%20the%20world!/version1.7.1-release.js" target="_blank" class="text-[11px] font-bold text-white bg-blue-600 hover:bg-blue-500 px-4 py-1.5 rounded-md transition uppercase tracking-wider">Install</a>
+                                        <a href="https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/GeoGuessr%20-%20Let's%20explore%20the%20world!/version1.7.1-release.js" target="_blank" class="text-[11px] font-bold text-white bg-emerald-600 hover:bg-emerald-500 px-4 py-1.5 rounded-md transition uppercase tracking-wider">Install</a>
                                     </td>
                                 </tr>
-                                <tr class="hover:bg-blue-500/[0.02] transition">
-                                    <td class="px-6 py-4 mono text-blue-400">v1.8.0-release.js</td>
+                                <tr class="hover:bg-emerald-500/[0.02] transition">
+                                    <td class="px-6 py-4 mono text-emerald-400">v1.8.0-release.js</td>
                                     <td class="px-6 py-4 text-slate-400">Enhanced API integration and performance optimization.</td>
                                     <td class="px-6 py-4 text-right">
-                                        <a href="https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/GeoGuessr%20-%20Let's%20explore%20the%20world!/version1.8.0-release.js" target="_blank" class="text-[11px] font-bold text-white bg-blue-600 hover:bg-blue-500 px-4 py-1.5 rounded-md transition uppercase tracking-wider">Install</a>
+                                        <a href="https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/GeoGuessr%20-%20Let's%20explore%20the%20world!/version1.8.0-release.js" target="_blank" class="text-[11px] font-bold text-white bg-emerald-600 hover:bg-emerald-500 px-4 py-1.5 rounded-md transition uppercase tracking-wider">Install</a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -186,10 +305,17 @@
                 <div class="glass-card rounded-2xl overflow-hidden border border-slate-800/50">
                     <div class="bg-slate-900/40 px-6 py-4 border-b border-slate-800/50 flex items-center justify-between">
                         <div class="flex items-center space-x-3">
-                            <div class="text-indigo-400 bg-indigo-500/10 p-2 rounded-lg">
-                                <i class="fas fa-chess-knight"></i>
+                            <div class="bg-[#769656]/10 p-2 rounded-lg border border-[#769656]/20">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 5C17.5 3 15 2 12 2C8 2 5 4 5 7C5 9 6.5 10.5 8 11.5C8 11.5 7 13 7 14.5C7 16 8 17 8 17L6 20H18L16 17C16 17 17 16 17 14.5C17 13 16 11.5 16 11.5C17.5 10.5 19 9 19 7C19 6.5 19 5.5 19 5Z" fill="#769656" stroke="#8fa866" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="14" cy="7" r="1.2" fill="#1e293b"/>
+                                    <path d="M17 9C17 9 15.5 10 14 10" stroke="#8fa866" stroke-width="1" stroke-linecap="round" fill="none"/>
+                                    <path d="M6 20H18" stroke="#769656" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M7 22H17" stroke="#769656" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M17 4C17 4 18 3 19 3" stroke="#8fa866" stroke-width="1" stroke-linecap="round" fill="none"/>
+                                </svg>
                             </div>
-                            <h4 class="font-bold text-white tracking-tight">Chess.com — Strategic Game Enhancements</h4>
+                            <h4 class="font-bold text-white tracking-tight">Chess.com - Play Chess Online - Free Games</h4>
                         </div>
                         <span class="text-[10px] mono text-slate-500 uppercase tracking-widest">1 Asset</span>
                     </div>
@@ -203,11 +329,11 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-800/30">
-                                <tr class="hover:bg-indigo-500/[0.02] transition">
-                                    <td class="px-6 py-4 mono text-indigo-400">v1.0.0-release.js</td>
+                                <tr class="hover:bg-[#769656]/[0.02] transition">
+                                    <td class="px-6 py-4 mono text-[#8fa866]">v1.0.0-release.js</td>
                                     <td class="px-6 py-4 text-slate-400">Initial stable build for UI responsiveness and board analysis.</td>
                                     <td class="px-6 py-4 text-right">
-                                        <a href="https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/Chess.com%20-%20Play%20Chess%20Online%20-%20Free%20Games/version1.0.0-release.js" target="_blank" class="text-[11px] font-bold text-white bg-indigo-600 hover:bg-indigo-500 px-4 py-1.5 rounded-md transition uppercase tracking-wider">Install</a>
+                                        <a href="https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/Chess.com%20-%20Play%20Chess%20Online%20-%20Free%20Games/version1.0.0-release.js" target="_blank" class="text-[11px] font-bold text-white bg-[#769656] hover:bg-[#8fa866] px-4 py-1.5 rounded-md transition uppercase tracking-wider">Install</a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -215,7 +341,7 @@
                     </div>
                 </div>
 
-                <!-- Empty State / Placeholder -->
+                <!-- Empty State -->
                 <div class="border border-dashed border-slate-800 p-12 rounded-2xl flex flex-col items-center justify-center text-center opacity-60">
                     <div class="h-10 w-10 border border-slate-800 rounded-full flex items-center justify-center mb-4 text-slate-700">
                         <i class="fas fa-plus text-sm"></i>
@@ -291,6 +417,27 @@
     </footer>
 
     <script>
+        // Modal logic
+        const modal = document.getElementById('modal-overlay');
+        
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Re-enable scroll
+        }
+
+        // Close on outside click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -304,7 +451,6 @@
             });
         });
 
-        // Add subtle parallax-like fade in
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 20) {
