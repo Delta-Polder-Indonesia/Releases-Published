@@ -8,9 +8,18 @@ This repository contains high-quality UserScripts (Tampermonkey/Greasemonkey) th
 
 ## 📦 Scripts List
 
+### GeoGuessr - Let's explore the world!
+
 | Script Name | Description | Installation |
 | ----------- | ----------- | ------------ |
-| GeoGuessr - Let's explore the world! | version1.7.1-release.js | [Install](https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/GeoGuessr%20-%20Let's%20explore%20the%20world!/version1.7.1-release.js) |
+| GeoGuessr | version 1.7.1 - release.js | [Install](https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/GeoGuessr%20-%20Let's%20explore%20the%20world!/version1.7.1-release.js) |
+| GeoGuessr | version 1.8.0 - release.js | [Install](https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/GeoGuessr%20-%20Let's%20explore%20the%20world!/version1.8.0-release.js) |
+
+### Chess.com - Play Chess Online - Free Games
+
+| Script Name | Description | Installation |
+| ----------- | ----------- | ------------ |
+| Chess.com | version 1.0.0 - release.js | [Install](https://raw.githubusercontent.com/JD-YH03D/release/refs/heads/main/GeoGuessr%20-%20Let's%20explore%20the%20world!/version1.7.1-release.js) |
 
 ## 🛠 Installation
 
