@@ -14,7 +14,7 @@
 
 [![GitHub](https://img.shields.io/badge/GitHub-JD--YH03D-181717?style=for-the-badge&logo=github)](https://github.com/JD-YH03D)
 [![Greasy Fork](https://img.shields.io/badge/Greasy_Fork-Profile-670000?style=for-the-badge&logo=tampermonkey)](https://greasyfork.org/id/users/1575724-qwerty-1)
-[![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](#-license)
+[![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](https://raw.githubusercontent.com/JD-YH03D/Releases-Published/refs/heads/main/LICENSE)
 [![Scripts](https://img.shields.io/badge/Active_Scripts-3-3b82f6?style=for-the-badge)](#-available-scripts)
 [![Status](https://img.shields.io/badge/Build-Stable-22c55e?style=for-the-badge)](#)
 
